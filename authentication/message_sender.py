@@ -1,7 +1,7 @@
 import hmac
 import hashlib
 
-#message
+#message encryption
 message='Santosh'
 enc_msg=''
 key='2112000'
