@@ -2,9 +2,15 @@ import hmac
 import hashlib
 
 #message
-message=b'Santosh'
+message='Santosh'
+enc_msg=''
+key='2112000'
+for i in range(len(message)):
+    enc_msg+=chr(ord(message[i])^ord(key[i%len(key)]))
+print(enc_msg)
 
 #Integrity check
+message=bytes(message.encode('utf-8'))
 hash_of_msg=hashlib.sha512(message).hexdigest()
 print(hash_of_msg)
 
